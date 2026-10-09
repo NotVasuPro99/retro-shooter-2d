@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bmvxl6w8888qt"]
+
+[ext_resource type="Script" uid="uid://p8gqtx000yax" path="res://gameoverscreen.gd" id="1_o4bge"]
+[ext_resource type="AudioStream" uid="uid://dbseq0dak7msp" path="res://533034__evretro__8-bit-game-over-soundtune.wav" id="2_cmhhj"]
+
+[node name="GameOverScreen" type="Control" unique_id=847076697]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_o4bge")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1259766729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.011764706, 0.011764706, 0.21568628, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1238631093]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.333
+anchor_right = 0.5
+anchor_bottom = 0.333
+offset_left = -176.0
+offset_top = -55.783997
+offset_right = 196.0
+offset_bottom = 34.216003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 65
+text = "GAME OVER"
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=339029823]
+stream = ExtResource("2_cmhhj")
+
+[node name="RestartButton" type="Button" parent="." unique_id=470596776]
+unique_name_in_owner = true
+modulate = Color(0.20784314, 0.85882354, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 76.0
+offset_right = 142.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "RESTART"
+
+[node name="Label2" type="Label" parent="." unique_id=834722121]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 164.0
+offset_right = 72.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 22
+text = "OR PRESS R "
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=97016998]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.44400004
+anchor_right = 0.5
+anchor_bottom = 0.44400004
+offset_left = -88.0
+offset_top = -31.712036
+offset_right = 162.0
+offset_bottom = 35.287964
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 44
+
+[node name="CommentLabel" type="Label" parent="." unique_id=1104084004]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66
+anchor_top = 0.55600005
+anchor_right = 0.66
+anchor_bottom = 0.55600005
+offset_left = -344.32
+offset_top = -32.288025
+offset_right = 155.68
+offset_bottom = 34.711975
+theme_override_font_sizes/font_size = 48

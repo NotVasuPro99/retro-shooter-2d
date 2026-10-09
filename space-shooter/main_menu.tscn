@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c8crr5c74ip6a"]
+
+[ext_resource type="Script" uid="uid://cfonifoldg7bm" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=2095869833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1770327107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011764706, 0.011764706, 0.21568628, 1)
+
+[node name="Title" type="Label" parent="ColorRect" unique_id=730731615]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 240.0
+offset_right = 811.0
+offset_bottom = 317.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 56
+text = "SPACE SHOOTER"
+
+[node name="PlayButton" type="Button" parent="ColorRect/Title" unique_id=719936557]
+unique_name_in_owner = true
+modulate = Color(0, 0.9009214, 0.29001766, 1)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 88.0
+offset_right = 357.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 33
+text = "START GAME"
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1474341760]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "v1.0"
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=529992390]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 174.0
+grow_vertical = 0
+text = "Made by- VasuKaushal"

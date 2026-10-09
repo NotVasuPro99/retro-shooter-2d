@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bd3icnjda5bti"]
+
+[ext_resource type="PackedScene" uid="uid://cxp2icw5g0eob" path="res://enemy.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://biyfhfwaeywu2" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cp374h8dax5f7" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bpan0aqigbx00" path="res://bullet.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://ddwdqp1mdmpym" path="res://Gemini_Generated_Image_tavp8dtavp8dtavp.png" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://cfms4w2bds0r3" path="res://678988__adam_zero__plastic-adrenaline-loop.mp3" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bmvxl6w8888qt" path="res://gameoverscreen.tscn" id="6_272bh"]
+
+[node name="Main" type="Node2D" unique_id=4848748]
+position = Vector2(16, 0)
+script = ExtResource("1_lquwl")
+
+[node name="Enemy" parent="." unique_id=157778598 instance=ExtResource("1_0xm2m")]
+position = Vector2(352, 0)
+
+[node name="Player" parent="." unique_id=258451850 instance=ExtResource("2_h2yge")]
+position = Vector2(312, 392)
+
+[node name="Bullet" parent="." unique_id=295004481 instance=ExtResource("3_h2yge")]
+position = Vector2(0, 16)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=689776857]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=235237966]
+motion_mirroring = Vector2(1148, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=714707330]
+position = Vector2(8.000061, -9.1552734e-05)
+scale = Vector2(0.93023247, 1.0104167)
+texture = ExtResource("4_1bvp3")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1659538482]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=478550559]
+offset_right = 112.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.38249993, 1, 0.050000012, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Score:0"
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer" unique_id=1802382138]
+offset_top = 40.0
+offset_right = 113.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.27316672, 1, 0.110000014, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Lives: 3"
+
+[node name="GameOverScreen" parent="CanvasLayer" unique_id=847076697 instance=ExtResource("6_272bh")]
+offset_right = 8.0
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=270008278]
+stream = ExtResource("6_7mycd")
+volume_db = 4.334
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1168841110]
+offset = Vector2(574, 324)

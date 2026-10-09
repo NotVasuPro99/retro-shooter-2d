@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cp374h8dax5f7"]
+
+[ext_resource type="Script" uid="uid://bf73kmhwh27jw" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://dbqq131f2cq2v" path="res://Spaceship_jpeg-removebg-preview.png" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://5qfqj24iog0s" path="res://freesound_community-silenced-gunshot-81063.mp3" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bd8r7a86m0cn7" path="res://Blast-removebg-preview (2).png" id="3_sweqy"]
+[ext_resource type="AudioStream" uid="uid://dpt1ns4fvfo8y" path="res://344301__musiclegends__hit_hurt13.wav" id="4_hqtel"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bvp3"]
+radius = 32.0
+height = 80.0
+
+[node name="Player" type="CharacterBody2D" unique_id=258451850]
+position = Vector2(0, -8)
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265437180]
+position = Vector2(64, 60)
+shape = SubResource("CapsuleShape2D_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786739226]
+position = Vector2(64.00001, 64)
+rotation = 3.148895
+scale = Vector2(0.3449039, -0.22260322)
+texture = ExtResource("2_onrkg")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=431391158]
+position = Vector2(64, 24)
+
+[node name="MuzzleFlash" type="Sprite2D" parent="Muzzle" unique_id=702950085]
+visible = false
+position = Vector2(0, -8)
+scale = Vector2(0.07200002, 0.07200002)
+texture = ExtResource("3_sweqy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=625472902]
+stream = ExtResource("3_i3pqv")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1753321960]
+stream = ExtResource("4_hqtel")
